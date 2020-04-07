@@ -1,0 +1,595 @@
+Analysis & Synthesis report for pong
+Mon Jan 27 15:04:24 2020
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. State Machine - |pong_top_an|state_reg
+ 10. State Machine - |pong_top_an|kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|state_reg
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Registers Packed Into Inferred Megafunctions
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Source assignments for pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated
+ 17. Parameter Settings for User Entity Instance: kb_code:kb_code_unit
+ 18. Parameter Settings for Inferred Entity Instance: pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0
+ 19. altsyncram Parameter Settings by Entity Instance
+ 20. Port Connectivity Checks: "pong_text:text_unit"
+ 21. Port Connectivity Checks: "kb_code:kb_code_unit|ps2_rx:ps2_rx_unit"
+ 22. Port Connectivity Checks: "kb_code:kb_code_unit"
+ 23. Elapsed Time Per Partition
+ 24. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Jan 27 15:04:24 2020           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; pong                                            ;
+; Top-level Entity Name              ; pong_top_an                                     ;
+; Family                             ; Cyclone II                                      ;
+; Total logic elements               ; 593                                             ;
+;     Total combinational functions  ; 574                                             ;
+;     Dedicated logic registers      ; 128                                             ;
+; Total registers                    ; 128                                             ;
+; Total pins                         ; 18                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 16,384                                          ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C20F484C7       ;                    ;
+; Top-level entity name                                                      ; pong_top_an        ; pong               ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                            ; Library ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------+---------+
+; vga_sync.vhd                     ; yes             ; User VHDL File               ; C:/Users/John/Documents/myFpgaProjects/pong/vga_sync.vhd                ;         ;
+; pong_graph_animate.vhd           ; yes             ; User VHDL File               ; C:/Users/John/Documents/myFpgaProjects/pong/pong_graph_animate.vhd      ;         ;
+; pong_top_an.vhd                  ; yes             ; User VHDL File               ; C:/Users/John/Documents/myFpgaProjects/pong/pong_top_an.vhd             ;         ;
+; output_files/ps2_rx.vhd          ; yes             ; User VHDL File               ; C:/Users/John/Documents/myFpgaProjects/pong/output_files/ps2_rx.vhd     ;         ;
+; kb_code.vhd                      ; yes             ; User VHDL File               ; C:/Users/John/Documents/myFpgaProjects/pong/kb_code.vhd                 ;         ;
+; font_rom.vhd                     ; yes             ; User VHDL File               ; C:/Users/John/Documents/myFpgaProjects/pong/font_rom.vhd                ;         ;
+; m100_counter.vhd                 ; yes             ; User VHDL File               ; C:/Users/John/Documents/myFpgaProjects/pong/m100_counter.vhd            ;         ;
+; timer.vhd                        ; yes             ; User VHDL File               ; C:/Users/John/Documents/myFpgaProjects/pong/timer.vhd                   ;         ;
+; pong_text.vhd                    ; yes             ; User VHDL File               ; C:/Users/John/Documents/myFpgaProjects/pong/pong_text.vhd               ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; aglobal130.inc                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc        ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                       ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                       ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_8lv.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/John/Documents/myFpgaProjects/pong/db/altsyncram_8lv.tdf       ;         ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary            ;
++---------------------------------------------+----------+
+; Resource                                    ; Usage    ;
++---------------------------------------------+----------+
+; Estimated Total logic elements              ; 593      ;
+;                                             ;          ;
+; Total combinational functions               ; 574      ;
+; Logic element usage by number of LUT inputs ;          ;
+;     -- 4 input functions                    ; 259      ;
+;     -- 3 input functions                    ; 189      ;
+;     -- <=2 input functions                  ; 126      ;
+;                                             ;          ;
+; Logic elements by mode                      ;          ;
+;     -- normal mode                          ; 392      ;
+;     -- arithmetic mode                      ; 182      ;
+;                                             ;          ;
+; Total registers                             ; 128      ;
+;     -- Dedicated logic registers            ; 128      ;
+;     -- I/O registers                        ; 0        ;
+;                                             ;          ;
+; I/O pins                                    ; 18       ;
+; Total memory bits                           ; 16384    ;
+; Embedded Multiplier 9-bit elements          ; 0        ;
+; Maximum fan-out node                        ; CLOCK_50 ;
+; Maximum fan-out                             ; 136      ;
+; Total fan-out                               ; 2479     ;
+; Average fan-out                             ; 3.41     ;
++---------------------------------------------+----------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                              ;
++---------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                  ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                     ; Library Name ;
++---------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------+--------------+
+; |pong_top_an                                ; 574 (45)          ; 128 (11)     ; 16384       ; 0            ; 0       ; 0         ; 18   ; 0            ; |pong_top_an                                                                                            ; work         ;
+;    |kb_code:kb_code_unit|                   ; 36 (17)           ; 31 (5)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong_top_an|kb_code:kb_code_unit                                                                       ; work         ;
+;       |ps2_rx:ps2_rx_unit|                  ; 19 (19)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong_top_an|kb_code:kb_code_unit|ps2_rx:ps2_rx_unit                                                    ; work         ;
+;    |m100_counter:counter1_unit|             ; 16 (16)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong_top_an|m100_counter:counter1_unit                                                                 ; work         ;
+;    |m100_counter:counter2_unit|             ; 16 (16)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong_top_an|m100_counter:counter2_unit                                                                 ; work         ;
+;    |pong_graph_animate:pong_graph_an_unit|  ; 237 (237)         ; 40 (40)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong_top_an|pong_graph_animate:pong_graph_an_unit                                                      ; work         ;
+;    |pong_text:text_unit|                    ; 168 (168)         ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong_top_an|pong_text:text_unit                                                                        ; work         ;
+;       |font_rom:font_unit|                  ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong_top_an|pong_text:text_unit|font_rom:font_unit                                                     ; work         ;
+;          |altsyncram:Mux7_rtl_0|            ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong_top_an|pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0                               ; work         ;
+;             |altsyncram_8lv:auto_generated| ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong_top_an|pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated ; work         ;
+;    |timer:timer_unit|                       ; 14 (14)           ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong_top_an|timer:timer_unit                                                                           ; work         ;
+;    |vga_sync:vga_sync_unit|                 ; 42 (42)           ; 23 (23)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong_top_an|vga_sync:vga_sync_unit                                                                     ; work         ;
++---------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                    ;
++-------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+-------+---------------------------+
+; Name                                                                                                  ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF                       ;
++-------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+-------+---------------------------+
+; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 2048         ; 8            ; --           ; --           ; 16384 ; pong.pong_top_an0.rtl.mif ;
++-------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+-------+---------------------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------+
+; State Machine - |pong_top_an|state_reg                                                      ;
++-------------------+----------------+-------------------+----------------+-------------------+
+; Name              ; state_reg.over ; state_reg.newball ; state_reg.play ; state_reg.newgame ;
++-------------------+----------------+-------------------+----------------+-------------------+
+; state_reg.newgame ; 0              ; 0                 ; 0              ; 0                 ;
+; state_reg.play    ; 0              ; 0                 ; 1              ; 1                 ;
+; state_reg.newball ; 0              ; 1                 ; 0              ; 1                 ;
+; state_reg.over    ; 1              ; 0                 ; 0              ; 1                 ;
++-------------------+----------------+-------------------+----------------+-------------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------+
+; State Machine - |pong_top_an|kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|state_reg ;
++----------------+----------------+---------------+------------------------------+
+; Name           ; state_reg.load ; state_reg.dps ; state_reg.idle               ;
++----------------+----------------+---------------+------------------------------+
+; state_reg.idle ; 0              ; 0             ; 0                            ;
+; state_reg.dps  ; 0              ; 1             ; 1                            ;
+; state_reg.load ; 1              ; 0             ; 1                            ;
++----------------+----------------+---------------+------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                         ;
++---------------------------------------------------------+------------------------------------------------------------------+
+; Register name                                           ; Reason for Removal                                               ;
++---------------------------------------------------------+------------------------------------------------------------------+
+; pong_graph_animate:pong_graph_an_unit|bar2_y_reg[0,1]   ; Merged with pong_graph_animate:pong_graph_an_unit|bar1_y_reg[1]  ;
+; pong_graph_animate:pong_graph_an_unit|bar1_y_reg[0]     ; Merged with pong_graph_animate:pong_graph_an_unit|bar1_y_reg[1]  ;
+; pong_graph_animate:pong_graph_an_unit|y_delta_reg[3..8] ; Merged with pong_graph_animate:pong_graph_an_unit|y_delta_reg[9] ;
+; pong_graph_animate:pong_graph_an_unit|x_delta_reg[4..9] ; Merged with pong_graph_animate:pong_graph_an_unit|x_delta_reg[3] ;
+; pong_graph_animate:pong_graph_an_unit|bar1_y_reg[1]     ; Stuck at GND due to stuck port data_in                           ;
+; pong_graph_animate:pong_graph_an_unit|x_delta_reg[0]    ; Stuck at GND due to stuck port data_in                           ;
+; pong_graph_animate:pong_graph_an_unit|y_delta_reg[0]    ; Stuck at GND due to stuck port data_in                           ;
+; pong_graph_animate:pong_graph_an_unit|ball_x_reg[0]     ; Stuck at GND due to stuck port data_in                           ;
+; pong_graph_animate:pong_graph_an_unit|ball_y_reg[0]     ; Stuck at GND due to stuck port data_in                           ;
+; Total Number of Removed Registers = 20                  ;                                                                  ;
++---------------------------------------------------------+------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 128   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 25    ;
+; Number of registers using Asynchronous Clear ; 128   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 102   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------+
+; Inverted Register Statistics                                   ;
++------------------------------------------------------+---------+
+; Inverted Register                                    ; Fan out ;
++------------------------------------------------------+---------+
+; timer:timer_unit|timer_reg[0]                        ; 2       ;
+; timer:timer_unit|timer_reg[1]                        ; 2       ;
+; timer:timer_unit|timer_reg[2]                        ; 2       ;
+; timer:timer_unit|timer_reg[3]                        ; 2       ;
+; timer:timer_unit|timer_reg[4]                        ; 2       ;
+; timer:timer_unit|timer_reg[5]                        ; 2       ;
+; timer:timer_unit|timer_reg[6]                        ; 2       ;
+; pong_graph_animate:pong_graph_an_unit|x_delta_reg[2] ; 2       ;
+; pong_graph_animate:pong_graph_an_unit|y_delta_reg[2] ; 2       ;
+; Total number of inverted registers = 9               ;         ;
++------------------------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions                                                                     ;
++-------------------------------------------------------+---------------------------------------------------+------+
+; Register Name                                         ; Megafunction                                      ; Type ;
++-------------------------------------------------------+---------------------------------------------------+------+
+; pong_text:text_unit|font_rom:font_unit|data_reg[0..7] ; pong_text:text_unit|font_rom:font_unit|Mux7_rtl_0 ; ROM  ;
++-------------------------------------------------------+---------------------------------------------------+------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |pong_top_an|pong_graph_animate:pong_graph_an_unit|x_delta_reg[1] ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |pong_top_an|kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|b_reg[4]     ;
+; 3:1                ; 18 bits   ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |pong_top_an|pong_graph_animate:pong_graph_an_unit|ball_x_reg[5]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |pong_top_an|pong_graph_animate:pong_graph_an_unit|bar1_y_reg[2]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |pong_top_an|pong_graph_animate:pong_graph_an_unit|bar2_y_reg[3]  ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |pong_top_an|pong_graph_animate:pong_graph_an_unit|y_delta_reg[1] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |pong_top_an|m100_counter:counter2_unit|dig0_reg[3]               ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |pong_top_an|m100_counter:counter1_unit|dig0_reg[1]               ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |pong_top_an|m100_counter:counter2_unit|dig1_reg[1]               ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |pong_top_an|m100_counter:counter1_unit|dig1_reg[2]               ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |pong_top_an|kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|n_reg[3]     ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 2 LEs                ; 6 LEs                  ; Yes        ; |pong_top_an|p1_ball_reg[1]                                       ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 2 LEs                ; 8 LEs                  ; Yes        ; |pong_top_an|p2_ball_reg[1]                                       ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |pong_top_an|timer:timer_unit|timer_reg[1]                        ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |pong_top_an|kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|state_next   ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; No         ; |pong_top_an|pong_text:text_unit|rom_addr[3]                      ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |pong_top_an|pong_text:text_unit|rom_addr[9]                      ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 4 LEs                ; 10 LEs                 ; No         ; |pong_top_an|Selector5                                            ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 4 LEs                ; 10 LEs                 ; No         ; |pong_top_an|Selector6                                            ;
+; 36:1               ; 2 bits    ; 48 LEs        ; 36 LEs               ; 12 LEs                 ; No         ; |pong_top_an|pong_text:text_unit|rom_addr[7]                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Source assignments for pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated ;
++---------------------------------+--------------------+------+-----------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                  ;
++---------------------------------+--------------------+------+-----------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                   ;
++---------------------------------+--------------------+------+-----------------------------------------------------+
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: kb_code:kb_code_unit ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; w_size         ; 2     ; Signed Integer                           ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0 ;
++------------------------------------+---------------------------+----------------------------------------------+
+; Parameter Name                     ; Value                     ; Type                                         ;
++------------------------------------+---------------------------+----------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                         ; Untyped                                      ;
+; AUTO_CARRY_CHAINS                  ; ON                        ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS               ; OFF                       ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS                ; ON                        ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                       ; IGNORE_CASCADE                               ;
+; WIDTH_BYTEENA                      ; 1                         ; Untyped                                      ;
+; OPERATION_MODE                     ; ROM                       ; Untyped                                      ;
+; WIDTH_A                            ; 8                         ; Untyped                                      ;
+; WIDTHAD_A                          ; 11                        ; Untyped                                      ;
+; NUMWORDS_A                         ; 2048                      ; Untyped                                      ;
+; OUTDATA_REG_A                      ; UNREGISTERED              ; Untyped                                      ;
+; ADDRESS_ACLR_A                     ; NONE                      ; Untyped                                      ;
+; OUTDATA_ACLR_A                     ; NONE                      ; Untyped                                      ;
+; WRCONTROL_ACLR_A                   ; NONE                      ; Untyped                                      ;
+; INDATA_ACLR_A                      ; NONE                      ; Untyped                                      ;
+; BYTEENA_ACLR_A                     ; NONE                      ; Untyped                                      ;
+; WIDTH_B                            ; 1                         ; Untyped                                      ;
+; WIDTHAD_B                          ; 1                         ; Untyped                                      ;
+; NUMWORDS_B                         ; 1                         ; Untyped                                      ;
+; INDATA_REG_B                       ; CLOCK1                    ; Untyped                                      ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                    ; Untyped                                      ;
+; RDCONTROL_REG_B                    ; CLOCK1                    ; Untyped                                      ;
+; ADDRESS_REG_B                      ; CLOCK1                    ; Untyped                                      ;
+; OUTDATA_REG_B                      ; UNREGISTERED              ; Untyped                                      ;
+; BYTEENA_REG_B                      ; CLOCK1                    ; Untyped                                      ;
+; INDATA_ACLR_B                      ; NONE                      ; Untyped                                      ;
+; WRCONTROL_ACLR_B                   ; NONE                      ; Untyped                                      ;
+; ADDRESS_ACLR_B                     ; NONE                      ; Untyped                                      ;
+; OUTDATA_ACLR_B                     ; NONE                      ; Untyped                                      ;
+; RDCONTROL_ACLR_B                   ; NONE                      ; Untyped                                      ;
+; BYTEENA_ACLR_B                     ; NONE                      ; Untyped                                      ;
+; WIDTH_BYTEENA_A                    ; 1                         ; Untyped                                      ;
+; WIDTH_BYTEENA_B                    ; 1                         ; Untyped                                      ;
+; RAM_BLOCK_TYPE                     ; AUTO                      ; Untyped                                      ;
+; BYTE_SIZE                          ; 8                         ; Untyped                                      ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                 ; Untyped                                      ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ      ; Untyped                                      ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ      ; Untyped                                      ;
+; INIT_FILE                          ; pong.pong_top_an0.rtl.mif ; Untyped                                      ;
+; INIT_FILE_LAYOUT                   ; PORT_A                    ; Untyped                                      ;
+; MAXIMUM_DEPTH                      ; 0                         ; Untyped                                      ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                    ; Untyped                                      ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                    ; Untyped                                      ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                    ; Untyped                                      ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                    ; Untyped                                      ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN           ; Untyped                                      ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN           ; Untyped                                      ;
+; ENABLE_ECC                         ; FALSE                     ; Untyped                                      ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                     ; Untyped                                      ;
+; WIDTH_ECCSTATUS                    ; 3                         ; Untyped                                      ;
+; DEVICE_FAMILY                      ; Cyclone II                ; Untyped                                      ;
+; CBXI_PARAMETER                     ; altsyncram_8lv            ; Untyped                                      ;
++------------------------------------+---------------------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                         ;
++-------------------------------------------+--------------------------------------------------------------+
+; Name                                      ; Value                                                        ;
++-------------------------------------------+--------------------------------------------------------------+
+; Number of entity instances                ; 1                                                            ;
+; Entity Instance                           ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0 ;
+;     -- OPERATION_MODE                     ; ROM                                                          ;
+;     -- WIDTH_A                            ; 8                                                            ;
+;     -- NUMWORDS_A                         ; 2048                                                         ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                 ;
+;     -- WIDTH_B                            ; 1                                                            ;
+;     -- NUMWORDS_B                         ; 1                                                            ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                       ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                 ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                         ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                    ;
++-------------------------------------------+--------------------------------------------------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "pong_text:text_unit" ;
++---------------+-------+----------+--------------+
+; Port          ; Type  ; Severity ; Details      ;
++---------------+-------+----------+--------------+
+; win_dig[3..2] ; Input ; Info     ; Stuck at GND ;
++---------------+-------+----------+--------------+
+
+
++---------------------------------------------------------------------+
+; Port Connectivity Checks: "kb_code:kb_code_unit|ps2_rx:ps2_rx_unit" ;
++-------+-------+----------+------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                  ;
++-------+-------+----------+------------------------------------------+
+; rx_en ; Input ; Info     ; Stuck at VCC                             ;
++-------+-------+----------+------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "kb_code:kb_code_unit"                                                                   ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; key_code ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:03     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Mon Jan 27 15:04:18 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pong -c pong
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file vga_sync.vhd
+    Info (12022): Found design unit 1: vga_sync-arch
+    Info (12023): Found entity 1: vga_sync
+Info (12021): Found 2 design units, including 1 entities, in source file pong_graph_animate.vhd
+    Info (12022): Found design unit 1: pong_graph_animate-arch
+    Info (12023): Found entity 1: pong_graph_animate
+Info (12021): Found 2 design units, including 1 entities, in source file pong_top_an.vhd
+    Info (12022): Found design unit 1: pong_top_an-arch
+    Info (12023): Found entity 1: pong_top_an
+Info (12021): Found 2 design units, including 1 entities, in source file output_files/ps2_rx.vhd
+    Info (12022): Found design unit 1: ps2_rx-arch
+    Info (12023): Found entity 1: ps2_rx
+Info (12021): Found 2 design units, including 1 entities, in source file kb_code.vhd
+    Info (12022): Found design unit 1: kb_code-arch
+    Info (12023): Found entity 1: kb_code
+Info (12021): Found 2 design units, including 1 entities, in source file font_rom.vhd
+    Info (12022): Found design unit 1: font_rom-arch
+    Info (12023): Found entity 1: font_rom
+Info (12021): Found 2 design units, including 1 entities, in source file m100_counter.vhd
+    Info (12022): Found design unit 1: m100_counter-arch
+    Info (12023): Found entity 1: m100_counter
+Info (12021): Found 2 design units, including 1 entities, in source file timer.vhd
+    Info (12022): Found design unit 1: timer-arch
+    Info (12023): Found entity 1: timer
+Info (12021): Found 2 design units, including 1 entities, in source file pong_text.vhd
+    Info (12022): Found design unit 1: pong_text-arch
+    Info (12023): Found entity 1: pong_text
+Info (12127): Elaborating entity "pong_top_an" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at pong_top_an.vhd(11): used implicit default value for signal "LEDG" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10036): Verilog HDL or VHDL warning at pong_top_an.vhd(36): object "key_code" assigned a value but never read
+Info (12129): Elaborating entity "kb_code" using architecture "A:arch" for hierarchy "kb_code:kb_code_unit"
+Warning (10541): VHDL Signal Declaration warning at kb_code.vhd(10): used implicit default value for signal "key_code" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Info (12129): Elaborating entity "ps2_rx" using architecture "A:arch" for hierarchy "kb_code:kb_code_unit|ps2_rx:ps2_rx_unit"
+Info (12128): Elaborating entity "vga_sync" for hierarchy "vga_sync:vga_sync_unit"
+Info (12128): Elaborating entity "pong_text" for hierarchy "pong_text:text_unit"
+Info (12128): Elaborating entity "font_rom" for hierarchy "pong_text:text_unit|font_rom:font_unit"
+Info (12128): Elaborating entity "pong_graph_animate" for hierarchy "pong_graph_animate:pong_graph_an_unit"
+Info (12128): Elaborating entity "timer" for hierarchy "timer:timer_unit"
+Info (12128): Elaborating entity "m100_counter" for hierarchy "m100_counter:counter1_unit"
+Info (19000): Inferred 1 megafunctions from design logic
+    Info (276031): Inferred altsyncram megafunction from the following design logic: "pong_text:text_unit|font_rom:font_unit|Mux7_rtl_0"
+        Info (286033): Parameter OPERATION_MODE set to ROM
+        Info (286033): Parameter WIDTH_A set to 8
+        Info (286033): Parameter WIDTHAD_A set to 11
+        Info (286033): Parameter NUMWORDS_A set to 2048
+        Info (286033): Parameter OUTDATA_REG_A set to UNREGISTERED
+        Info (286033): Parameter RAM_BLOCK_TYPE set to AUTO
+        Info (286033): Parameter INIT_FILE set to pong.pong_top_an0.rtl.mif
+Info (12130): Elaborated megafunction instantiation "pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0"
+Info (12133): Instantiated megafunction "pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "ROM"
+    Info (12134): Parameter "WIDTH_A" = "8"
+    Info (12134): Parameter "WIDTHAD_A" = "11"
+    Info (12134): Parameter "NUMWORDS_A" = "2048"
+    Info (12134): Parameter "OUTDATA_REG_A" = "UNREGISTERED"
+    Info (12134): Parameter "RAM_BLOCK_TYPE" = "AUTO"
+    Info (12134): Parameter "INIT_FILE" = "pong.pong_top_an0.rtl.mif"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_8lv.tdf
+    Info (12023): Found entity 1: altsyncram_8lv
+Info (13000): Registers with preset signals will power-up high
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LEDG[0]" is stuck at GND
+    Warning (13410): Pin "LEDG[1]" is stuck at GND
+    Warning (13410): Pin "LEDG[2]" is stuck at GND
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 621 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 14 output pins
+    Info (21061): Implemented 595 logic cells
+    Info (21064): Implemented 8 RAM segments
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 8 warnings
+    Info: Peak virtual memory: 4666 megabytes
+    Info: Processing ended: Mon Jan 27 15:04:24 2020
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:06
+
+

@@ -1,0 +1,1149 @@
+TimeQuest Timing Analyzer report for pong
+Mon Jan 27 15:04:41 2020
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'CLOCK_50'
+ 12. Slow Model Hold: 'CLOCK_50'
+ 13. Slow Model Minimum Pulse Width: 'CLOCK_50'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Fast Model Setup Summary
+ 19. Fast Model Hold Summary
+ 20. Fast Model Recovery Summary
+ 21. Fast Model Removal Summary
+ 22. Fast Model Minimum Pulse Width Summary
+ 23. Fast Model Setup: 'CLOCK_50'
+ 24. Fast Model Hold: 'CLOCK_50'
+ 25. Fast Model Minimum Pulse Width: 'CLOCK_50'
+ 26. Setup Times
+ 27. Hold Times
+ 28. Clock to Output Times
+ 29. Minimum Clock to Output Times
+ 30. Multicorner Timing Analysis Summary
+ 31. Setup Times
+ 32. Hold Times
+ 33. Clock to Output Times
+ 34. Minimum Clock to Output Times
+ 35. Setup Transfers
+ 36. Hold Transfers
+ 37. Report TCCS
+ 38. Report RSKM
+ 39. Unconstrained Paths
+ 40. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; pong                                                              ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C20F484C7                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                               ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets      ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+; CLOCK_50   ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLOCK_50 } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+
+
++-------------------------------------------------+
+; Slow Model Fmax Summary                         ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 99.14 MHz ; 99.14 MHz       ; CLOCK_50   ;      ;
++-----------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-----------------------------------+
+; Slow Model Setup Summary          ;
++----------+--------+---------------+
+; Clock    ; Slack  ; End Point TNS ;
++----------+--------+---------------+
+; CLOCK_50 ; -9.087 ; -1057.786     ;
++----------+--------+---------------+
+
+
++----------------------------------+
+; Slow Model Hold Summary          ;
++----------+-------+---------------+
+; Clock    ; Slack ; End Point TNS ;
++----------+-------+---------------+
+; CLOCK_50 ; 0.445 ; 0.000         ;
++----------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++----------+--------+--------------------+
+; Clock    ; Slack  ; End Point TNS      ;
++----------+--------+--------------------+
+; CLOCK_50 ; -1.814 ; -325.011           ;
++----------+--------+--------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'CLOCK_50'                                                                                                                                                ;
++--------+-----------------------------------------------------+----------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                           ; To Node                                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------------------+----------------------------------------+--------------+-------------+--------------+------------+------------+
+; -9.087 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[3] ; rgb_reg[2]~_Duplicate_1                ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.036     ; 9.960      ;
+; -8.949 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[4] ; rgb_reg[2]~_Duplicate_1                ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.036     ; 9.822      ;
+; -8.880 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[5] ; rgb_reg[2]~_Duplicate_1                ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.036     ; 9.753      ;
+; -8.840 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[3] ; rgb_reg[2]                             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.042     ; 9.707      ;
+; -8.837 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[3] ; rgb_reg[2]~_Duplicate_2                ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.037     ; 9.709      ;
+; -8.832 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[3] ; rgb_reg[1]~_Duplicate_1                ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.030     ; 9.711      ;
+; -8.830 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[3] ; rgb_reg[1]                             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.042     ; 9.697      ;
+; -8.762 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[6] ; rgb_reg[2]~_Duplicate_1                ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.036     ; 9.635      ;
+; -8.702 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[4] ; rgb_reg[2]                             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.042     ; 9.569      ;
+; -8.699 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[4] ; rgb_reg[2]~_Duplicate_2                ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.037     ; 9.571      ;
+; -8.694 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[4] ; rgb_reg[1]~_Duplicate_1                ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.030     ; 9.573      ;
+; -8.692 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[4] ; rgb_reg[1]                             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.042     ; 9.559      ;
+; -8.658 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[3] ; state_reg.newball                      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 9.705      ;
+; -8.658 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[3] ; state_reg.over                         ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 9.705      ;
+; -8.633 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[5] ; rgb_reg[2]                             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.042     ; 9.500      ;
+; -8.630 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[5] ; rgb_reg[2]~_Duplicate_2                ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.037     ; 9.502      ;
+; -8.625 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[5] ; rgb_reg[1]~_Duplicate_1                ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.030     ; 9.504      ;
+; -8.623 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[5] ; rgb_reg[1]                             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.042     ; 9.490      ;
+; -8.611 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[3] ; rgb_reg[0]                             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.037     ; 9.483      ;
+; -8.574 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[3] ; rgb_reg[0]~_Duplicate_1                ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.027     ; 9.456      ;
+; -8.538 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[3] ; rgb_reg[1]~_Duplicate_2                ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.037     ; 9.410      ;
+; -8.520 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[4] ; state_reg.newball                      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 9.567      ;
+; -8.520 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[4] ; state_reg.over                         ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 9.567      ;
+; -8.515 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[6] ; rgb_reg[2]                             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.042     ; 9.382      ;
+; -8.512 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[6] ; rgb_reg[2]~_Duplicate_2                ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.037     ; 9.384      ;
+; -8.507 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[6] ; rgb_reg[1]~_Duplicate_1                ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.030     ; 9.386      ;
+; -8.505 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[6] ; rgb_reg[1]                             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.042     ; 9.372      ;
+; -8.477 ; pong_graph_animate:pong_graph_an_unit|ball_x_reg[3] ; rgb_reg[2]~_Duplicate_1                ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.043     ; 9.343      ;
+; -8.473 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[4] ; rgb_reg[0]                             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.037     ; 9.345      ;
+; -8.451 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[5] ; state_reg.newball                      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 9.498      ;
+; -8.451 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[5] ; state_reg.over                         ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 9.498      ;
+; -8.436 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[4] ; rgb_reg[0]~_Duplicate_1                ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.027     ; 9.318      ;
+; -8.421 ; pong_graph_animate:pong_graph_an_unit|ball_x_reg[4] ; rgb_reg[2]~_Duplicate_1                ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.043     ; 9.287      ;
+; -8.404 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[5] ; rgb_reg[0]                             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.037     ; 9.276      ;
+; -8.400 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[4] ; rgb_reg[1]~_Duplicate_2                ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.037     ; 9.272      ;
+; -8.398 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[3] ; timer:timer_unit|timer_reg[0]          ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 9.445      ;
+; -8.398 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[3] ; timer:timer_unit|timer_reg[1]          ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 9.445      ;
+; -8.398 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[3] ; timer:timer_unit|timer_reg[2]          ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 9.445      ;
+; -8.398 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[3] ; timer:timer_unit|timer_reg[3]          ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 9.445      ;
+; -8.398 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[3] ; timer:timer_unit|timer_reg[4]          ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 9.445      ;
+; -8.398 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[3] ; timer:timer_unit|timer_reg[5]          ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 9.445      ;
+; -8.398 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[3] ; timer:timer_unit|timer_reg[6]          ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 9.445      ;
+; -8.395 ; vga_sync:vga_sync_unit|v_count_reg[7]               ; rgb_reg[2]~_Duplicate_1                ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.041     ; 9.263      ;
+; -8.381 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[7] ; rgb_reg[2]~_Duplicate_1                ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.036     ; 9.254      ;
+; -8.367 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[5] ; rgb_reg[0]~_Duplicate_1                ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.027     ; 9.249      ;
+; -8.362 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[3] ; p1_ball_reg[0]                         ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 9.409      ;
+; -8.362 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[3] ; p1_ball_reg[1]                         ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 9.409      ;
+; -8.346 ; vga_sync:vga_sync_unit|h_count_reg[7]               ; rgb_reg[2]~_Duplicate_1                ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.041     ; 9.214      ;
+; -8.334 ; vga_sync:vga_sync_unit|v_count_reg[7]               ; rgb_reg[0]                             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.042     ; 9.201      ;
+; -8.331 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[5] ; rgb_reg[1]~_Duplicate_2                ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.037     ; 9.203      ;
+; -8.320 ; vga_sync:vga_sync_unit|h_count_reg[8]               ; rgb_reg[2]~_Duplicate_1                ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.041     ; 9.188      ;
+; -8.319 ; pong_graph_animate:pong_graph_an_unit|ball_x_reg[5] ; rgb_reg[2]~_Duplicate_1                ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.043     ; 9.185      ;
+; -8.302 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[3] ; rgb_reg[0]~_Duplicate_2                ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.028     ; 9.183      ;
+; -8.298 ; vga_sync:vga_sync_unit|v_count_reg[8]               ; rgb_reg[2]~_Duplicate_1                ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.041     ; 9.166      ;
+; -8.297 ; vga_sync:vga_sync_unit|v_count_reg[7]               ; rgb_reg[0]~_Duplicate_1                ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.032     ; 9.174      ;
+; -8.286 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[6] ; rgb_reg[0]                             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.037     ; 9.158      ;
+; -8.285 ; vga_sync:vga_sync_unit|h_count_reg[7]               ; rgb_reg[0]                             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.042     ; 9.152      ;
+; -8.277 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[3] ; p2_ball_reg[0]                         ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 9.324      ;
+; -8.277 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[3] ; p2_ball_reg[1]                         ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 9.324      ;
+; -8.270 ; pong_graph_animate:pong_graph_an_unit|bar1_y_reg[2] ; rgb_reg[2]~_Duplicate_1                ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.040     ; 9.139      ;
+; -8.261 ; vga_sync:vga_sync_unit|v_count_reg[2]               ; rgb_reg[2]~_Duplicate_1                ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.046     ; 9.124      ;
+; -8.260 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[4] ; timer:timer_unit|timer_reg[0]          ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 9.307      ;
+; -8.260 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[4] ; timer:timer_unit|timer_reg[1]          ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 9.307      ;
+; -8.260 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[4] ; timer:timer_unit|timer_reg[2]          ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 9.307      ;
+; -8.260 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[4] ; timer:timer_unit|timer_reg[3]          ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 9.307      ;
+; -8.260 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[4] ; timer:timer_unit|timer_reg[4]          ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 9.307      ;
+; -8.260 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[4] ; timer:timer_unit|timer_reg[5]          ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 9.307      ;
+; -8.260 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[4] ; timer:timer_unit|timer_reg[6]          ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 9.307      ;
+; -8.259 ; vga_sync:vga_sync_unit|h_count_reg[8]               ; rgb_reg[0]                             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.042     ; 9.126      ;
+; -8.249 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[6] ; rgb_reg[0]~_Duplicate_1                ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.027     ; 9.131      ;
+; -8.248 ; vga_sync:vga_sync_unit|v_count_reg[9]               ; rgb_reg[2]~_Duplicate_1                ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.044     ; 9.113      ;
+; -8.248 ; vga_sync:vga_sync_unit|h_count_reg[7]               ; rgb_reg[0]~_Duplicate_1                ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.032     ; 9.125      ;
+; -8.246 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[1] ; rgb_reg[2]~_Duplicate_1                ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.036     ; 9.119      ;
+; -8.238 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[3] ; m100_counter:counter2_unit|dig1_reg[0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.005      ; 9.281      ;
+; -8.238 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[3] ; m100_counter:counter2_unit|dig1_reg[1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.005      ; 9.281      ;
+; -8.237 ; vga_sync:vga_sync_unit|v_count_reg[8]               ; rgb_reg[0]                             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.042     ; 9.104      ;
+; -8.230 ; pong_graph_animate:pong_graph_an_unit|ball_x_reg[3] ; rgb_reg[2]                             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.049     ; 9.090      ;
+; -8.227 ; pong_graph_animate:pong_graph_an_unit|ball_x_reg[3] ; rgb_reg[2]~_Duplicate_2                ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.044     ; 9.092      ;
+; -8.224 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[4] ; p1_ball_reg[0]                         ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 9.271      ;
+; -8.224 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[4] ; p1_ball_reg[1]                         ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 9.271      ;
+; -8.222 ; pong_graph_animate:pong_graph_an_unit|ball_x_reg[3] ; rgb_reg[1]~_Duplicate_1                ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.037     ; 9.094      ;
+; -8.222 ; vga_sync:vga_sync_unit|h_count_reg[8]               ; rgb_reg[0]~_Duplicate_1                ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.032     ; 9.099      ;
+; -8.220 ; pong_graph_animate:pong_graph_an_unit|ball_x_reg[3] ; rgb_reg[1]                             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.049     ; 9.080      ;
+; -8.213 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[6] ; rgb_reg[1]~_Duplicate_2                ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.037     ; 9.085      ;
+; -8.200 ; vga_sync:vga_sync_unit|v_count_reg[8]               ; rgb_reg[0]~_Duplicate_1                ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.032     ; 9.077      ;
+; -8.191 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[5] ; timer:timer_unit|timer_reg[0]          ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 9.238      ;
+; -8.191 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[5] ; timer:timer_unit|timer_reg[1]          ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 9.238      ;
+; -8.191 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[5] ; timer:timer_unit|timer_reg[2]          ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 9.238      ;
+; -8.191 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[5] ; timer:timer_unit|timer_reg[3]          ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 9.238      ;
+; -8.191 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[5] ; timer:timer_unit|timer_reg[4]          ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 9.238      ;
+; -8.191 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[5] ; timer:timer_unit|timer_reg[5]          ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 9.238      ;
+; -8.191 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[5] ; timer:timer_unit|timer_reg[6]          ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 9.238      ;
+; -8.187 ; vga_sync:vga_sync_unit|v_count_reg[9]               ; rgb_reg[0]                             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.045     ; 9.051      ;
+; -8.181 ; pong_graph_animate:pong_graph_an_unit|ball_x_reg[6] ; rgb_reg[2]~_Duplicate_1                ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.043     ; 9.047      ;
+; -8.174 ; pong_graph_animate:pong_graph_an_unit|ball_x_reg[4] ; rgb_reg[2]                             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.049     ; 9.034      ;
+; -8.173 ; vga_sync:vga_sync_unit|h_count_reg[6]               ; rgb_reg[2]~_Duplicate_1                ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.041     ; 9.041      ;
+; -8.171 ; pong_graph_animate:pong_graph_an_unit|ball_x_reg[4] ; rgb_reg[2]~_Duplicate_2                ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.044     ; 9.036      ;
+; -8.166 ; pong_graph_animate:pong_graph_an_unit|ball_x_reg[4] ; rgb_reg[1]~_Duplicate_1                ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.037     ; 9.038      ;
+; -8.164 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[4] ; rgb_reg[0]~_Duplicate_2                ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.028     ; 9.045      ;
+; -8.164 ; pong_graph_animate:pong_graph_an_unit|ball_x_reg[4] ; rgb_reg[1]                             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.049     ; 9.024      ;
++--------+-----------------------------------------------------+----------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'CLOCK_50'                                                                                                                                                                   ;
++-------+--------------------------------------------------------+--------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                              ; To Node                                                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------------------------+--------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.445 ; vga_sync:vga_sync_unit|mod2_reg                        ; vga_sync:vga_sync_unit|mod2_reg                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; pong_graph_animate:pong_graph_an_unit|y_delta_reg[9]   ; pong_graph_animate:pong_graph_an_unit|y_delta_reg[9]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; pong_graph_animate:pong_graph_an_unit|y_delta_reg[2]   ; pong_graph_animate:pong_graph_an_unit|y_delta_reg[2]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; pong_graph_animate:pong_graph_an_unit|y_delta_reg[1]   ; pong_graph_animate:pong_graph_an_unit|y_delta_reg[1]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|state_reg.idle ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|state_reg.idle ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|n_reg[0]       ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|n_reg[0]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|n_reg[1]       ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|n_reg[1]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|n_reg[2]       ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|n_reg[2]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|n_reg[3]       ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|n_reg[3]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|state_reg.dps  ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|state_reg.dps  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; kb_code:kb_code_unit|state_reg                         ; kb_code:kb_code_unit|state_reg                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; kb_code:kb_code_unit|p2_up_reg                         ; kb_code:kb_code_unit|p2_up_reg                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; kb_code:kb_code_unit|p2_down_reg                       ; kb_code:kb_code_unit|p2_down_reg                       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; kb_code:kb_code_unit|p1_down_reg                       ; kb_code:kb_code_unit|p1_down_reg                       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; kb_code:kb_code_unit|p1_up_reg                         ; kb_code:kb_code_unit|p1_up_reg                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; pong_graph_animate:pong_graph_an_unit|x_delta_reg[2]   ; pong_graph_animate:pong_graph_an_unit|x_delta_reg[2]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; p1_ball_reg[0]                                         ; p1_ball_reg[0]                                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; p1_ball_reg[1]                                         ; p1_ball_reg[1]                                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; p2_ball_reg[0]                                         ; p2_ball_reg[0]                                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; p2_ball_reg[1]                                         ; p2_ball_reg[1]                                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; state_reg.newgame                                      ; state_reg.newgame                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; state_reg.play                                         ; state_reg.play                                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; m100_counter:counter2_unit|dig0_reg[0]                 ; m100_counter:counter2_unit|dig0_reg[0]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; m100_counter:counter2_unit|dig0_reg[1]                 ; m100_counter:counter2_unit|dig0_reg[1]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; m100_counter:counter1_unit|dig0_reg[0]                 ; m100_counter:counter1_unit|dig0_reg[0]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; m100_counter:counter1_unit|dig0_reg[1]                 ; m100_counter:counter1_unit|dig0_reg[1]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; m100_counter:counter1_unit|dig1_reg[0]                 ; m100_counter:counter1_unit|dig1_reg[0]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; m100_counter:counter1_unit|dig1_reg[1]                 ; m100_counter:counter1_unit|dig1_reg[1]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.629 ; timer:timer_unit|timer_reg[6]                          ; timer:timer_unit|timer_reg[6]                          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.915      ;
+; 0.642 ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|filter_reg[6]  ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|filter_reg[5]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.928      ;
+; 0.653 ; kb_code:kb_code_unit|state_reg                         ; kb_code:kb_code_unit|p2_up_reg                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.939      ;
+; 0.668 ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|b_reg[3]       ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|b_reg[2]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.954      ;
+; 0.768 ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|filter_reg[1]  ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|filter_reg[0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.054      ;
+; 0.779 ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|b_reg[9]       ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|b_reg[8]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.065      ;
+; 0.787 ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|filter_reg[5]  ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|filter_reg[4]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.073      ;
+; 0.799 ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|b_reg[4]       ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|b_reg[3]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.085      ;
+; 0.812 ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|state_reg.dps  ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|state_reg.load ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.098      ;
+; 0.869 ; pong_graph_animate:pong_graph_an_unit|bar2_y_reg[9]    ; pong_graph_animate:pong_graph_an_unit|bar2_y_reg[9]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.155      ;
+; 0.900 ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|filter_reg[3]  ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|filter_reg[2]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.186      ;
+; 0.908 ; timer:timer_unit|timer_reg[0]                          ; timer:timer_unit|timer_reg[0]                          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.194      ;
+; 0.910 ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|state_reg.load ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|state_reg.idle ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.196      ;
+; 0.972 ; vga_sync:vga_sync_unit|v_count_reg[1]                  ; vga_sync:vga_sync_unit|v_count_reg[1]                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.258      ;
+; 0.972 ; pong_graph_animate:pong_graph_an_unit|ball_x_reg[1]    ; pong_graph_animate:pong_graph_an_unit|ball_x_reg[1]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.258      ;
+; 0.977 ; pong_graph_animate:pong_graph_an_unit|bar2_y_reg[2]    ; pong_graph_animate:pong_graph_an_unit|bar2_y_reg[2]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.263      ;
+; 0.980 ; vga_sync:vga_sync_unit|h_count_reg[6]                  ; vga_sync:vga_sync_unit|h_count_reg[6]                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.266      ;
+; 0.980 ; timer:timer_unit|timer_reg[2]                          ; timer:timer_unit|timer_reg[2]                          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.266      ;
+; 0.980 ; timer:timer_unit|timer_reg[4]                          ; timer:timer_unit|timer_reg[4]                          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.266      ;
+; 0.983 ; pong_graph_animate:pong_graph_an_unit|bar1_y_reg[3]    ; pong_graph_animate:pong_graph_an_unit|bar1_y_reg[3]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.269      ;
+; 0.984 ; vga_sync:vga_sync_unit|v_count_reg[5]                  ; vga_sync:vga_sync_unit|v_count_reg[5]                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.270      ;
+; 0.984 ; pong_graph_animate:pong_graph_an_unit|bar1_y_reg[5]    ; pong_graph_animate:pong_graph_an_unit|bar1_y_reg[5]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.270      ;
+; 0.984 ; timer:timer_unit|timer_reg[1]                          ; timer:timer_unit|timer_reg[1]                          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.270      ;
+; 0.985 ; vga_sync:vga_sync_unit|h_count_reg[4]                  ; vga_sync:vga_sync_unit|h_count_reg[4]                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.271      ;
+; 0.987 ; pong_graph_animate:pong_graph_an_unit|ball_x_reg[8]    ; pong_graph_animate:pong_graph_an_unit|ball_x_reg[8]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.273      ;
+; 0.987 ; p2_ball_reg[0]                                         ; p2_ball_reg[1]                                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.273      ;
+; 0.989 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[1]    ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[1]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.275      ;
+; 0.992 ; pong_graph_animate:pong_graph_an_unit|bar2_y_reg[3]    ; pong_graph_animate:pong_graph_an_unit|bar2_y_reg[3]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.278      ;
+; 0.992 ; pong_graph_animate:pong_graph_an_unit|bar2_y_reg[5]    ; pong_graph_animate:pong_graph_an_unit|bar2_y_reg[5]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.278      ;
+; 0.993 ; pong_graph_animate:pong_graph_an_unit|bar1_y_reg[7]    ; pong_graph_animate:pong_graph_an_unit|bar1_y_reg[7]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.279      ;
+; 0.993 ; pong_graph_animate:pong_graph_an_unit|bar1_y_reg[8]    ; pong_graph_animate:pong_graph_an_unit|bar1_y_reg[8]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.279      ;
+; 0.993 ; pong_graph_animate:pong_graph_an_unit|bar2_y_reg[8]    ; pong_graph_animate:pong_graph_an_unit|bar2_y_reg[8]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.279      ;
+; 0.993 ; pong_graph_animate:pong_graph_an_unit|ball_x_reg[7]    ; pong_graph_animate:pong_graph_an_unit|ball_x_reg[7]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.279      ;
+; 0.993 ; pong_graph_animate:pong_graph_an_unit|ball_x_reg[9]    ; pong_graph_animate:pong_graph_an_unit|ball_x_reg[9]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.279      ;
+; 0.994 ; pong_graph_animate:pong_graph_an_unit|ball_x_reg[3]    ; pong_graph_animate:pong_graph_an_unit|ball_x_reg[3]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.280      ;
+; 0.995 ; pong_graph_animate:pong_graph_an_unit|ball_x_reg[5]    ; pong_graph_animate:pong_graph_an_unit|ball_x_reg[5]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.281      ;
+; 0.997 ; vga_sync:vga_sync_unit|v_count_reg[7]                  ; vga_sync:vga_sync_unit|v_count_reg[7]                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.283      ;
+; 0.997 ; kb_code:kb_code_unit|state_reg                         ; kb_code:kb_code_unit|p1_up_reg                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.283      ;
+; 0.999 ; kb_code:kb_code_unit|state_reg                         ; kb_code:kb_code_unit|p1_down_reg                       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.285      ;
+; 1.000 ; vga_sync:vga_sync_unit|v_count_reg[8]                  ; vga_sync:vga_sync_unit|v_count_reg[8]                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.286      ;
+; 1.002 ; pong_graph_animate:pong_graph_an_unit|bar1_y_reg[9]    ; pong_graph_animate:pong_graph_an_unit|bar1_y_reg[9]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.288      ;
+; 1.002 ; kb_code:kb_code_unit|state_reg                         ; kb_code:kb_code_unit|p2_down_reg                       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.288      ;
+; 1.003 ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|state_reg.dps  ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|n_reg[3]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.289      ;
+; 1.004 ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|state_reg.dps  ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|n_reg[1]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.290      ;
+; 1.004 ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|state_reg.dps  ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|n_reg[2]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.290      ;
+; 1.005 ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|filter_reg[4]  ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|filter_reg[3]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.291      ;
+; 1.005 ; m100_counter:counter2_unit|dig0_reg[0]                 ; m100_counter:counter2_unit|dig0_reg[1]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.291      ;
+; 1.009 ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|state_reg.dps  ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|n_reg[0]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.295      ;
+; 1.015 ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|b_reg[2]       ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|b_reg[1]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.301      ;
+; 1.016 ; timer:timer_unit|timer_reg[3]                          ; timer:timer_unit|timer_reg[3]                          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.302      ;
+; 1.016 ; timer:timer_unit|timer_reg[5]                          ; timer:timer_unit|timer_reg[5]                          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.302      ;
+; 1.017 ; pong_graph_animate:pong_graph_an_unit|ball_x_reg[2]    ; pong_graph_animate:pong_graph_an_unit|ball_x_reg[2]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.303      ;
+; 1.019 ; p1_ball_reg[0]                                         ; p1_ball_reg[1]                                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.305      ;
+; 1.020 ; vga_sync:vga_sync_unit|h_count_reg[1]                  ; vga_sync:vga_sync_unit|h_count_reg[1]                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.306      ;
+; 1.022 ; vga_sync:vga_sync_unit|h_count_reg[3]                  ; vga_sync:vga_sync_unit|h_count_reg[3]                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.308      ;
+; 1.022 ; pong_graph_animate:pong_graph_an_unit|bar1_y_reg[2]    ; pong_graph_animate:pong_graph_an_unit|bar1_y_reg[2]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.308      ;
+; 1.023 ; vga_sync:vga_sync_unit|h_count_reg[0]                  ; vga_sync:vga_sync_unit|h_count_reg[0]                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.309      ;
+; 1.024 ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|n_reg[0]       ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|n_reg[1]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.310      ;
+; 1.024 ; m100_counter:counter1_unit|dig1_reg[0]                 ; m100_counter:counter1_unit|dig1_reg[1]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.310      ;
+; 1.025 ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|b_reg[6]       ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|b_reg[5]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.311      ;
+; 1.025 ; pong_graph_animate:pong_graph_an_unit|bar2_y_reg[4]    ; pong_graph_animate:pong_graph_an_unit|bar2_y_reg[4]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.311      ;
+; 1.026 ; pong_graph_animate:pong_graph_an_unit|bar1_y_reg[6]    ; pong_graph_animate:pong_graph_an_unit|bar1_y_reg[6]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.312      ;
+; 1.027 ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|b_reg[8]       ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|b_reg[7]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.313      ;
+; 1.028 ; vga_sync:vga_sync_unit|v_count_reg[6]                  ; vga_sync:vga_sync_unit|v_count_reg[6]                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.314      ;
+; 1.029 ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|b_reg[5]       ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|b_reg[4]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.315      ;
+; 1.031 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[2]    ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[2]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.317      ;
+; 1.031 ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|filter_reg[2]  ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|filter_reg[1]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.317      ;
+; 1.031 ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|state_reg.idle ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|state_reg.dps  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.317      ;
+; 1.034 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[3]    ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[3]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.320      ;
+; 1.042 ; vga_sync:vga_sync_unit|h_count_reg[7]                  ; vga_sync:vga_sync_unit|h_count_reg[7]                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.328      ;
+; 1.043 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[5]    ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[5]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.329      ;
+; 1.045 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[7]    ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[7]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.331      ;
++-------+--------------------------------------------------------+--------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'CLOCK_50'                                                                                                                                                                      ;
++--------+--------------+----------------+------------------+----------+------------+-----------------------------------------------------------------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                                                                                                                      ;
++--------+--------------+----------------+------------------+----------+------------+-----------------------------------------------------------------------------------------------------------------------------+
+; -1.814 ; 0.500        ; 2.314          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a0~porta_address_reg0  ;
+; -1.814 ; 0.500        ; 2.314          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a0~porta_address_reg0  ;
+; -1.814 ; 0.500        ; 2.314          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a0~porta_address_reg1  ;
+; -1.814 ; 0.500        ; 2.314          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a0~porta_address_reg1  ;
+; -1.814 ; 0.500        ; 2.314          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a0~porta_address_reg10 ;
+; -1.814 ; 0.500        ; 2.314          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a0~porta_address_reg10 ;
+; -1.814 ; 0.500        ; 2.314          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a0~porta_address_reg2  ;
+; -1.814 ; 0.500        ; 2.314          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a0~porta_address_reg2  ;
+; -1.814 ; 0.500        ; 2.314          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a0~porta_address_reg3  ;
+; -1.814 ; 0.500        ; 2.314          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a0~porta_address_reg3  ;
+; -1.814 ; 0.500        ; 2.314          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a0~porta_address_reg4  ;
+; -1.814 ; 0.500        ; 2.314          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a0~porta_address_reg4  ;
+; -1.814 ; 0.500        ; 2.314          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a0~porta_address_reg5  ;
+; -1.814 ; 0.500        ; 2.314          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a0~porta_address_reg5  ;
+; -1.814 ; 0.500        ; 2.314          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a0~porta_address_reg6  ;
+; -1.814 ; 0.500        ; 2.314          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a0~porta_address_reg6  ;
+; -1.814 ; 0.500        ; 2.314          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a0~porta_address_reg7  ;
+; -1.814 ; 0.500        ; 2.314          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a0~porta_address_reg7  ;
+; -1.814 ; 0.500        ; 2.314          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a0~porta_address_reg8  ;
+; -1.814 ; 0.500        ; 2.314          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a0~porta_address_reg8  ;
+; -1.814 ; 0.500        ; 2.314          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a0~porta_address_reg9  ;
+; -1.814 ; 0.500        ; 2.314          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a0~porta_address_reg9  ;
+; -1.814 ; 0.500        ; 2.314          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg0  ;
+; -1.814 ; 0.500        ; 2.314          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg0  ;
+; -1.814 ; 0.500        ; 2.314          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg1  ;
+; -1.814 ; 0.500        ; 2.314          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg1  ;
+; -1.814 ; 0.500        ; 2.314          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg10 ;
+; -1.814 ; 0.500        ; 2.314          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg10 ;
+; -1.814 ; 0.500        ; 2.314          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg2  ;
+; -1.814 ; 0.500        ; 2.314          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg2  ;
+; -1.814 ; 0.500        ; 2.314          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg3  ;
+; -1.814 ; 0.500        ; 2.314          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg3  ;
+; -1.814 ; 0.500        ; 2.314          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg4  ;
+; -1.814 ; 0.500        ; 2.314          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg4  ;
+; -1.814 ; 0.500        ; 2.314          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg5  ;
+; -1.814 ; 0.500        ; 2.314          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg5  ;
+; -1.814 ; 0.500        ; 2.314          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg6  ;
+; -1.814 ; 0.500        ; 2.314          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg6  ;
+; -1.814 ; 0.500        ; 2.314          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg7  ;
+; -1.814 ; 0.500        ; 2.314          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg7  ;
+; -1.814 ; 0.500        ; 2.314          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg8  ;
+; -1.814 ; 0.500        ; 2.314          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg8  ;
+; -1.814 ; 0.500        ; 2.314          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg9  ;
+; -1.814 ; 0.500        ; 2.314          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg9  ;
+; -1.814 ; 0.500        ; 2.314          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg0  ;
+; -1.814 ; 0.500        ; 2.314          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg0  ;
+; -1.814 ; 0.500        ; 2.314          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg1  ;
+; -1.814 ; 0.500        ; 2.314          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg1  ;
+; -1.814 ; 0.500        ; 2.314          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg10 ;
+; -1.814 ; 0.500        ; 2.314          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg10 ;
+; -1.814 ; 0.500        ; 2.314          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg2  ;
+; -1.814 ; 0.500        ; 2.314          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg2  ;
+; -1.814 ; 0.500        ; 2.314          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg3  ;
+; -1.814 ; 0.500        ; 2.314          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg3  ;
+; -1.814 ; 0.500        ; 2.314          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg4  ;
+; -1.814 ; 0.500        ; 2.314          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg4  ;
+; -1.814 ; 0.500        ; 2.314          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg5  ;
+; -1.814 ; 0.500        ; 2.314          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg5  ;
+; -1.814 ; 0.500        ; 2.314          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg6  ;
+; -1.814 ; 0.500        ; 2.314          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg6  ;
+; -1.814 ; 0.500        ; 2.314          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg7  ;
+; -1.814 ; 0.500        ; 2.314          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg7  ;
+; -1.814 ; 0.500        ; 2.314          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg8  ;
+; -1.814 ; 0.500        ; 2.314          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg8  ;
+; -1.814 ; 0.500        ; 2.314          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg9  ;
+; -1.814 ; 0.500        ; 2.314          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg9  ;
+; -1.814 ; 0.500        ; 2.314          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg0  ;
+; -1.814 ; 0.500        ; 2.314          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg0  ;
+; -1.814 ; 0.500        ; 2.314          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg1  ;
+; -1.814 ; 0.500        ; 2.314          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg1  ;
+; -1.814 ; 0.500        ; 2.314          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg10 ;
+; -1.814 ; 0.500        ; 2.314          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg10 ;
+; -1.814 ; 0.500        ; 2.314          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg2  ;
+; -1.814 ; 0.500        ; 2.314          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg2  ;
+; -1.814 ; 0.500        ; 2.314          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg3  ;
+; -1.814 ; 0.500        ; 2.314          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg3  ;
+; -1.814 ; 0.500        ; 2.314          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg4  ;
+; -1.814 ; 0.500        ; 2.314          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg4  ;
+; -1.814 ; 0.500        ; 2.314          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg5  ;
+; -1.814 ; 0.500        ; 2.314          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg5  ;
+; -1.814 ; 0.500        ; 2.314          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg6  ;
+; -1.814 ; 0.500        ; 2.314          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg6  ;
+; -1.814 ; 0.500        ; 2.314          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg7  ;
+; -1.814 ; 0.500        ; 2.314          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg7  ;
+; -1.814 ; 0.500        ; 2.314          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg8  ;
+; -1.814 ; 0.500        ; 2.314          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg8  ;
+; -1.814 ; 0.500        ; 2.314          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg9  ;
+; -1.814 ; 0.500        ; 2.314          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg9  ;
+; -1.631 ; 1.000        ; 2.631          ; Port Rate        ; CLOCK_50 ; Rise       ; CLOCK_50                                                                                                                    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; kb_code:kb_code_unit|p1_down_reg                                                                                            ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; kb_code:kb_code_unit|p1_down_reg                                                                                            ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; kb_code:kb_code_unit|p1_up_reg                                                                                              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; kb_code:kb_code_unit|p1_up_reg                                                                                              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; kb_code:kb_code_unit|p2_down_reg                                                                                            ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; kb_code:kb_code_unit|p2_down_reg                                                                                            ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; kb_code:kb_code_unit|p2_up_reg                                                                                              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; kb_code:kb_code_unit|p2_up_reg                                                                                              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|b_reg[10]                                                                           ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|b_reg[10]                                                                           ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|b_reg[1]                                                                            ;
++--------+--------------+----------------+------------------+----------+------------+-----------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; PS2_CLK   ; CLOCK_50   ; -1.389 ; -1.389 ; Rise       ; CLOCK_50        ;
+; PS2_DAT   ; CLOCK_50   ; -1.398 ; -1.398 ; Rise       ; CLOCK_50        ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Hold Times                                                            ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; PS2_CLK   ; CLOCK_50   ; 1.593 ; 1.593 ; Rise       ; CLOCK_50        ;
+; PS2_DAT   ; CLOCK_50   ; 1.602 ; 1.602 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; VGA_B[*]  ; CLOCK_50   ; 6.196 ; 6.196 ; Rise       ; CLOCK_50        ;
+;  VGA_B[0] ; CLOCK_50   ; 6.187 ; 6.187 ; Rise       ; CLOCK_50        ;
+;  VGA_B[1] ; CLOCK_50   ; 6.177 ; 6.177 ; Rise       ; CLOCK_50        ;
+;  VGA_B[2] ; CLOCK_50   ; 6.196 ; 6.196 ; Rise       ; CLOCK_50        ;
+; VGA_G[*]  ; CLOCK_50   ; 6.187 ; 6.187 ; Rise       ; CLOCK_50        ;
+;  VGA_G[0] ; CLOCK_50   ; 6.182 ; 6.182 ; Rise       ; CLOCK_50        ;
+;  VGA_G[1] ; CLOCK_50   ; 6.184 ; 6.184 ; Rise       ; CLOCK_50        ;
+;  VGA_G[2] ; CLOCK_50   ; 6.187 ; 6.187 ; Rise       ; CLOCK_50        ;
+; VGA_HS    ; CLOCK_50   ; 6.197 ; 6.197 ; Rise       ; CLOCK_50        ;
+; VGA_R[*]  ; CLOCK_50   ; 6.187 ; 6.187 ; Rise       ; CLOCK_50        ;
+;  VGA_R[0] ; CLOCK_50   ; 6.162 ; 6.162 ; Rise       ; CLOCK_50        ;
+;  VGA_R[1] ; CLOCK_50   ; 6.168 ; 6.168 ; Rise       ; CLOCK_50        ;
+;  VGA_R[2] ; CLOCK_50   ; 6.187 ; 6.187 ; Rise       ; CLOCK_50        ;
+; VGA_VS    ; CLOCK_50   ; 6.167 ; 6.167 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; VGA_B[*]  ; CLOCK_50   ; 6.177 ; 6.177 ; Rise       ; CLOCK_50        ;
+;  VGA_B[0] ; CLOCK_50   ; 6.187 ; 6.187 ; Rise       ; CLOCK_50        ;
+;  VGA_B[1] ; CLOCK_50   ; 6.177 ; 6.177 ; Rise       ; CLOCK_50        ;
+;  VGA_B[2] ; CLOCK_50   ; 6.196 ; 6.196 ; Rise       ; CLOCK_50        ;
+; VGA_G[*]  ; CLOCK_50   ; 6.182 ; 6.182 ; Rise       ; CLOCK_50        ;
+;  VGA_G[0] ; CLOCK_50   ; 6.182 ; 6.182 ; Rise       ; CLOCK_50        ;
+;  VGA_G[1] ; CLOCK_50   ; 6.184 ; 6.184 ; Rise       ; CLOCK_50        ;
+;  VGA_G[2] ; CLOCK_50   ; 6.187 ; 6.187 ; Rise       ; CLOCK_50        ;
+; VGA_HS    ; CLOCK_50   ; 6.197 ; 6.197 ; Rise       ; CLOCK_50        ;
+; VGA_R[*]  ; CLOCK_50   ; 6.162 ; 6.162 ; Rise       ; CLOCK_50        ;
+;  VGA_R[0] ; CLOCK_50   ; 6.162 ; 6.162 ; Rise       ; CLOCK_50        ;
+;  VGA_R[1] ; CLOCK_50   ; 6.168 ; 6.168 ; Rise       ; CLOCK_50        ;
+;  VGA_R[2] ; CLOCK_50   ; 6.187 ; 6.187 ; Rise       ; CLOCK_50        ;
+; VGA_VS    ; CLOCK_50   ; 6.167 ; 6.167 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------+
+; Fast Model Setup Summary          ;
++----------+--------+---------------+
+; Clock    ; Slack  ; End Point TNS ;
++----------+--------+---------------+
+; CLOCK_50 ; -3.171 ; -299.072      ;
++----------+--------+---------------+
+
+
++----------------------------------+
+; Fast Model Hold Summary          ;
++----------+-------+---------------+
+; Clock    ; Slack ; End Point TNS ;
++----------+-------+---------------+
+; CLOCK_50 ; 0.215 ; 0.000         ;
++----------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++----------+--------+--------------------+
+; Clock    ; Slack  ; End Point TNS      ;
++----------+--------+--------------------+
+; CLOCK_50 ; -1.423 ; -260.604           ;
++----------+--------+--------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'CLOCK_50'                                                                                                                                                                                                         ;
++--------+-----------------------------------------------------------------------------------------------------------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                                                                                   ; To Node                 ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------------------------------------------------------------------------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+; -3.171 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg0  ; rgb_reg[0]              ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.127     ; 4.006      ;
+; -3.171 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg1  ; rgb_reg[0]              ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.127     ; 4.006      ;
+; -3.171 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg2  ; rgb_reg[0]              ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.127     ; 4.006      ;
+; -3.171 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg3  ; rgb_reg[0]              ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.127     ; 4.006      ;
+; -3.171 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg4  ; rgb_reg[0]              ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.127     ; 4.006      ;
+; -3.171 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg5  ; rgb_reg[0]              ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.127     ; 4.006      ;
+; -3.171 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg6  ; rgb_reg[0]              ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.127     ; 4.006      ;
+; -3.171 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg7  ; rgb_reg[0]              ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.127     ; 4.006      ;
+; -3.171 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg8  ; rgb_reg[0]              ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.127     ; 4.006      ;
+; -3.171 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg9  ; rgb_reg[0]              ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.127     ; 4.006      ;
+; -3.171 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg10 ; rgb_reg[0]              ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.127     ; 4.006      ;
+; -3.152 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg0  ; rgb_reg[2]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.126     ; 3.988      ;
+; -3.152 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg1  ; rgb_reg[2]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.126     ; 3.988      ;
+; -3.152 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg2  ; rgb_reg[2]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.126     ; 3.988      ;
+; -3.152 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg3  ; rgb_reg[2]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.126     ; 3.988      ;
+; -3.152 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg4  ; rgb_reg[2]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.126     ; 3.988      ;
+; -3.152 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg5  ; rgb_reg[2]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.126     ; 3.988      ;
+; -3.152 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg6  ; rgb_reg[2]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.126     ; 3.988      ;
+; -3.152 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg7  ; rgb_reg[2]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.126     ; 3.988      ;
+; -3.152 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg8  ; rgb_reg[2]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.126     ; 3.988      ;
+; -3.152 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg9  ; rgb_reg[2]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.126     ; 3.988      ;
+; -3.152 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg10 ; rgb_reg[2]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.126     ; 3.988      ;
+; -3.144 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg0  ; rgb_reg[0]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.118     ; 3.988      ;
+; -3.144 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg1  ; rgb_reg[0]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.118     ; 3.988      ;
+; -3.144 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg2  ; rgb_reg[0]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.118     ; 3.988      ;
+; -3.144 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg3  ; rgb_reg[0]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.118     ; 3.988      ;
+; -3.144 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg4  ; rgb_reg[0]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.118     ; 3.988      ;
+; -3.144 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg5  ; rgb_reg[0]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.118     ; 3.988      ;
+; -3.144 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg6  ; rgb_reg[0]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.118     ; 3.988      ;
+; -3.144 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg7  ; rgb_reg[0]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.118     ; 3.988      ;
+; -3.144 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg8  ; rgb_reg[0]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.118     ; 3.988      ;
+; -3.144 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg9  ; rgb_reg[0]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.118     ; 3.988      ;
+; -3.144 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg10 ; rgb_reg[0]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.118     ; 3.988      ;
+; -3.119 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg0  ; rgb_reg[0]              ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.112     ; 3.969      ;
+; -3.119 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg1  ; rgb_reg[0]              ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.112     ; 3.969      ;
+; -3.119 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg2  ; rgb_reg[0]              ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.112     ; 3.969      ;
+; -3.119 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg3  ; rgb_reg[0]              ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.112     ; 3.969      ;
+; -3.119 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg4  ; rgb_reg[0]              ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.112     ; 3.969      ;
+; -3.119 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg5  ; rgb_reg[0]              ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.112     ; 3.969      ;
+; -3.119 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg6  ; rgb_reg[0]              ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.112     ; 3.969      ;
+; -3.119 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg7  ; rgb_reg[0]              ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.112     ; 3.969      ;
+; -3.119 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg8  ; rgb_reg[0]              ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.112     ; 3.969      ;
+; -3.119 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg9  ; rgb_reg[0]              ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.112     ; 3.969      ;
+; -3.119 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg10 ; rgb_reg[0]              ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.112     ; 3.969      ;
+; -3.100 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg0  ; rgb_reg[2]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.111     ; 3.951      ;
+; -3.100 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg1  ; rgb_reg[2]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.111     ; 3.951      ;
+; -3.100 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg2  ; rgb_reg[2]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.111     ; 3.951      ;
+; -3.100 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg3  ; rgb_reg[2]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.111     ; 3.951      ;
+; -3.100 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg4  ; rgb_reg[2]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.111     ; 3.951      ;
+; -3.100 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg5  ; rgb_reg[2]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.111     ; 3.951      ;
+; -3.100 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg6  ; rgb_reg[2]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.111     ; 3.951      ;
+; -3.100 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg7  ; rgb_reg[2]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.111     ; 3.951      ;
+; -3.100 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg8  ; rgb_reg[2]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.111     ; 3.951      ;
+; -3.100 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg9  ; rgb_reg[2]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.111     ; 3.951      ;
+; -3.100 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg10 ; rgb_reg[2]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.111     ; 3.951      ;
+; -3.092 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg0  ; rgb_reg[0]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.103     ; 3.951      ;
+; -3.092 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg1  ; rgb_reg[0]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.103     ; 3.951      ;
+; -3.092 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg2  ; rgb_reg[0]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.103     ; 3.951      ;
+; -3.092 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg3  ; rgb_reg[0]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.103     ; 3.951      ;
+; -3.092 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg4  ; rgb_reg[0]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.103     ; 3.951      ;
+; -3.092 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg5  ; rgb_reg[0]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.103     ; 3.951      ;
+; -3.092 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg6  ; rgb_reg[0]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.103     ; 3.951      ;
+; -3.092 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg7  ; rgb_reg[0]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.103     ; 3.951      ;
+; -3.092 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg8  ; rgb_reg[0]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.103     ; 3.951      ;
+; -3.092 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg9  ; rgb_reg[0]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.103     ; 3.951      ;
+; -3.092 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg10 ; rgb_reg[0]~_Duplicate_1 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.103     ; 3.951      ;
+; -3.066 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg0  ; rgb_reg[2]              ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.130     ; 3.898      ;
+; -3.066 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg1  ; rgb_reg[2]              ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.130     ; 3.898      ;
+; -3.066 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg2  ; rgb_reg[2]              ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.130     ; 3.898      ;
+; -3.066 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg3  ; rgb_reg[2]              ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.130     ; 3.898      ;
+; -3.066 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg4  ; rgb_reg[2]              ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.130     ; 3.898      ;
+; -3.066 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg5  ; rgb_reg[2]              ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.130     ; 3.898      ;
+; -3.066 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg6  ; rgb_reg[2]              ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.130     ; 3.898      ;
+; -3.066 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg7  ; rgb_reg[2]              ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.130     ; 3.898      ;
+; -3.066 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg8  ; rgb_reg[2]              ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.130     ; 3.898      ;
+; -3.066 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg9  ; rgb_reg[2]              ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.130     ; 3.898      ;
+; -3.066 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg10 ; rgb_reg[2]              ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.130     ; 3.898      ;
+; -3.064 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg0  ; rgb_reg[2]~_Duplicate_2 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.127     ; 3.899      ;
+; -3.064 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg1  ; rgb_reg[2]~_Duplicate_2 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.127     ; 3.899      ;
+; -3.064 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg2  ; rgb_reg[2]~_Duplicate_2 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.127     ; 3.899      ;
+; -3.064 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg3  ; rgb_reg[2]~_Duplicate_2 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.127     ; 3.899      ;
+; -3.064 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg4  ; rgb_reg[2]~_Duplicate_2 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.127     ; 3.899      ;
+; -3.064 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg5  ; rgb_reg[2]~_Duplicate_2 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.127     ; 3.899      ;
+; -3.064 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg6  ; rgb_reg[2]~_Duplicate_2 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.127     ; 3.899      ;
+; -3.064 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg7  ; rgb_reg[2]~_Duplicate_2 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.127     ; 3.899      ;
+; -3.064 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg8  ; rgb_reg[2]~_Duplicate_2 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.127     ; 3.899      ;
+; -3.064 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg9  ; rgb_reg[2]~_Duplicate_2 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.127     ; 3.899      ;
+; -3.064 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg10 ; rgb_reg[2]~_Duplicate_2 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.127     ; 3.899      ;
+; -3.061 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg0  ; rgb_reg[0]              ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.122     ; 3.901      ;
+; -3.061 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg1  ; rgb_reg[0]              ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.122     ; 3.901      ;
+; -3.061 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg2  ; rgb_reg[0]              ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.122     ; 3.901      ;
+; -3.061 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg3  ; rgb_reg[0]              ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.122     ; 3.901      ;
+; -3.061 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg4  ; rgb_reg[0]              ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.122     ; 3.901      ;
+; -3.061 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg5  ; rgb_reg[0]              ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.122     ; 3.901      ;
+; -3.061 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg6  ; rgb_reg[0]              ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.122     ; 3.901      ;
+; -3.061 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg7  ; rgb_reg[0]              ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.122     ; 3.901      ;
+; -3.061 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg8  ; rgb_reg[0]              ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.122     ; 3.901      ;
+; -3.061 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg9  ; rgb_reg[0]              ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.122     ; 3.901      ;
+; -3.061 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg10 ; rgb_reg[0]              ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.122     ; 3.901      ;
+; -3.045 ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg0  ; rgb_reg[0]~_Duplicate_2 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.119     ; 3.888      ;
++--------+-----------------------------------------------------------------------------------------------------------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'CLOCK_50'                                                                                                                                                                   ;
++-------+--------------------------------------------------------+--------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                              ; To Node                                                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------------------------+--------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; vga_sync:vga_sync_unit|mod2_reg                        ; vga_sync:vga_sync_unit|mod2_reg                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; pong_graph_animate:pong_graph_an_unit|y_delta_reg[9]   ; pong_graph_animate:pong_graph_an_unit|y_delta_reg[9]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; pong_graph_animate:pong_graph_an_unit|y_delta_reg[2]   ; pong_graph_animate:pong_graph_an_unit|y_delta_reg[2]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; pong_graph_animate:pong_graph_an_unit|y_delta_reg[1]   ; pong_graph_animate:pong_graph_an_unit|y_delta_reg[1]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|state_reg.idle ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|state_reg.idle ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|n_reg[0]       ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|n_reg[0]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|n_reg[1]       ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|n_reg[1]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|n_reg[2]       ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|n_reg[2]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|n_reg[3]       ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|n_reg[3]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|state_reg.dps  ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|state_reg.dps  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; kb_code:kb_code_unit|state_reg                         ; kb_code:kb_code_unit|state_reg                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; kb_code:kb_code_unit|p2_up_reg                         ; kb_code:kb_code_unit|p2_up_reg                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; kb_code:kb_code_unit|p2_down_reg                       ; kb_code:kb_code_unit|p2_down_reg                       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; kb_code:kb_code_unit|p1_down_reg                       ; kb_code:kb_code_unit|p1_down_reg                       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; kb_code:kb_code_unit|p1_up_reg                         ; kb_code:kb_code_unit|p1_up_reg                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; pong_graph_animate:pong_graph_an_unit|x_delta_reg[2]   ; pong_graph_animate:pong_graph_an_unit|x_delta_reg[2]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; p1_ball_reg[0]                                         ; p1_ball_reg[0]                                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; p1_ball_reg[1]                                         ; p1_ball_reg[1]                                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; p2_ball_reg[0]                                         ; p2_ball_reg[0]                                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; p2_ball_reg[1]                                         ; p2_ball_reg[1]                                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; state_reg.newgame                                      ; state_reg.newgame                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; state_reg.play                                         ; state_reg.play                                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; m100_counter:counter2_unit|dig0_reg[0]                 ; m100_counter:counter2_unit|dig0_reg[0]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; m100_counter:counter2_unit|dig0_reg[1]                 ; m100_counter:counter2_unit|dig0_reg[1]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; m100_counter:counter1_unit|dig0_reg[0]                 ; m100_counter:counter1_unit|dig0_reg[0]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; m100_counter:counter1_unit|dig0_reg[1]                 ; m100_counter:counter1_unit|dig0_reg[1]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; m100_counter:counter1_unit|dig1_reg[0]                 ; m100_counter:counter1_unit|dig1_reg[0]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; m100_counter:counter1_unit|dig1_reg[1]                 ; m100_counter:counter1_unit|dig1_reg[1]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.243 ; timer:timer_unit|timer_reg[6]                          ; timer:timer_unit|timer_reg[6]                          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.395      ;
+; 0.254 ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|filter_reg[6]  ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|filter_reg[5]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.406      ;
+; 0.260 ; kb_code:kb_code_unit|state_reg                         ; kb_code:kb_code_unit|p2_up_reg                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.412      ;
+; 0.267 ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|b_reg[3]       ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|b_reg[2]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.419      ;
+; 0.327 ; pong_graph_animate:pong_graph_an_unit|bar2_y_reg[9]    ; pong_graph_animate:pong_graph_an_unit|bar2_y_reg[9]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.479      ;
+; 0.328 ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|filter_reg[1]  ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|filter_reg[0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.480      ;
+; 0.333 ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|b_reg[9]       ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|b_reg[8]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.485      ;
+; 0.338 ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|filter_reg[5]  ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|filter_reg[4]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.490      ;
+; 0.343 ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|state_reg.dps  ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|state_reg.load ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.495      ;
+; 0.347 ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|b_reg[4]       ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|b_reg[3]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.499      ;
+; 0.350 ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|filter_reg[3]  ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|filter_reg[2]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.502      ;
+; 0.355 ; timer:timer_unit|timer_reg[0]                          ; timer:timer_unit|timer_reg[0]                          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.507      ;
+; 0.358 ; vga_sync:vga_sync_unit|v_count_reg[1]                  ; vga_sync:vga_sync_unit|v_count_reg[1]                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358 ; pong_graph_animate:pong_graph_an_unit|bar2_y_reg[2]    ; pong_graph_animate:pong_graph_an_unit|bar2_y_reg[2]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358 ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|state_reg.load ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|state_reg.idle ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.510      ;
+; 0.361 ; pong_graph_animate:pong_graph_an_unit|ball_x_reg[1]    ; pong_graph_animate:pong_graph_an_unit|ball_x_reg[1]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.513      ;
+; 0.362 ; vga_sync:vga_sync_unit|h_count_reg[6]                  ; vga_sync:vga_sync_unit|h_count_reg[6]                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.514      ;
+; 0.362 ; timer:timer_unit|timer_reg[2]                          ; timer:timer_unit|timer_reg[2]                          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.514      ;
+; 0.363 ; vga_sync:vga_sync_unit|h_count_reg[4]                  ; vga_sync:vga_sync_unit|h_count_reg[4]                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.515      ;
+; 0.363 ; vga_sync:vga_sync_unit|v_count_reg[5]                  ; vga_sync:vga_sync_unit|v_count_reg[5]                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.515      ;
+; 0.363 ; timer:timer_unit|timer_reg[1]                          ; timer:timer_unit|timer_reg[1]                          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.515      ;
+; 0.363 ; timer:timer_unit|timer_reg[4]                          ; timer:timer_unit|timer_reg[4]                          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.515      ;
+; 0.364 ; pong_graph_animate:pong_graph_an_unit|bar1_y_reg[3]    ; pong_graph_animate:pong_graph_an_unit|bar1_y_reg[3]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.516      ;
+; 0.364 ; pong_graph_animate:pong_graph_an_unit|bar1_y_reg[5]    ; pong_graph_animate:pong_graph_an_unit|bar1_y_reg[5]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.516      ;
+; 0.368 ; pong_graph_animate:pong_graph_an_unit|bar2_y_reg[3]    ; pong_graph_animate:pong_graph_an_unit|bar2_y_reg[3]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.520      ;
+; 0.369 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[1]    ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[1]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.521      ;
+; 0.369 ; pong_graph_animate:pong_graph_an_unit|bar1_y_reg[7]    ; pong_graph_animate:pong_graph_an_unit|bar1_y_reg[7]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.521      ;
+; 0.369 ; pong_graph_animate:pong_graph_an_unit|bar1_y_reg[8]    ; pong_graph_animate:pong_graph_an_unit|bar1_y_reg[8]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.521      ;
+; 0.369 ; pong_graph_animate:pong_graph_an_unit|bar2_y_reg[5]    ; pong_graph_animate:pong_graph_an_unit|bar2_y_reg[5]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.521      ;
+; 0.369 ; pong_graph_animate:pong_graph_an_unit|bar2_y_reg[8]    ; pong_graph_animate:pong_graph_an_unit|bar2_y_reg[8]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.521      ;
+; 0.369 ; pong_graph_animate:pong_graph_an_unit|ball_x_reg[3]    ; pong_graph_animate:pong_graph_an_unit|ball_x_reg[3]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.521      ;
+; 0.369 ; pong_graph_animate:pong_graph_an_unit|ball_x_reg[7]    ; pong_graph_animate:pong_graph_an_unit|ball_x_reg[7]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.521      ;
+; 0.369 ; pong_graph_animate:pong_graph_an_unit|ball_x_reg[8]    ; pong_graph_animate:pong_graph_an_unit|ball_x_reg[8]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.521      ;
+; 0.370 ; vga_sync:vga_sync_unit|v_count_reg[7]                  ; vga_sync:vga_sync_unit|v_count_reg[7]                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.522      ;
+; 0.370 ; pong_graph_animate:pong_graph_an_unit|ball_x_reg[5]    ; pong_graph_animate:pong_graph_an_unit|ball_x_reg[5]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.522      ;
+; 0.370 ; pong_graph_animate:pong_graph_an_unit|ball_x_reg[9]    ; pong_graph_animate:pong_graph_an_unit|ball_x_reg[9]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.522      ;
+; 0.371 ; vga_sync:vga_sync_unit|v_count_reg[8]                  ; vga_sync:vga_sync_unit|v_count_reg[8]                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.523      ;
+; 0.371 ; timer:timer_unit|timer_reg[3]                          ; timer:timer_unit|timer_reg[3]                          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.523      ;
+; 0.371 ; p2_ball_reg[0]                                         ; p2_ball_reg[1]                                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.523      ;
+; 0.372 ; pong_graph_animate:pong_graph_an_unit|bar1_y_reg[2]    ; pong_graph_animate:pong_graph_an_unit|bar1_y_reg[2]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.524      ;
+; 0.372 ; pong_graph_animate:pong_graph_an_unit|ball_x_reg[2]    ; pong_graph_animate:pong_graph_an_unit|ball_x_reg[2]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.524      ;
+; 0.372 ; timer:timer_unit|timer_reg[5]                          ; timer:timer_unit|timer_reg[5]                          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.524      ;
+; 0.372 ; p1_ball_reg[0]                                         ; p1_ball_reg[1]                                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.524      ;
+; 0.373 ; pong_graph_animate:pong_graph_an_unit|bar1_y_reg[9]    ; pong_graph_animate:pong_graph_an_unit|bar1_y_reg[9]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.525      ;
+; 0.374 ; vga_sync:vga_sync_unit|h_count_reg[0]                  ; vga_sync:vga_sync_unit|h_count_reg[0]                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.526      ;
+; 0.374 ; vga_sync:vga_sync_unit|h_count_reg[1]                  ; vga_sync:vga_sync_unit|h_count_reg[1]                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.526      ;
+; 0.374 ; vga_sync:vga_sync_unit|h_count_reg[3]                  ; vga_sync:vga_sync_unit|h_count_reg[3]                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.526      ;
+; 0.374 ; pong_graph_animate:pong_graph_an_unit|bar2_y_reg[4]    ; pong_graph_animate:pong_graph_an_unit|bar2_y_reg[4]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.526      ;
+; 0.375 ; pong_graph_animate:pong_graph_an_unit|bar1_y_reg[6]    ; pong_graph_animate:pong_graph_an_unit|bar1_y_reg[6]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.527      ;
+; 0.375 ; kb_code:kb_code_unit|state_reg                         ; kb_code:kb_code_unit|p1_up_reg                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.527      ;
+; 0.376 ; kb_code:kb_code_unit|state_reg                         ; kb_code:kb_code_unit|p1_down_reg                       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.528      ;
+; 0.377 ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|n_reg[0]       ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|n_reg[1]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.529      ;
+; 0.377 ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|state_reg.dps  ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|n_reg[3]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.529      ;
+; 0.378 ; vga_sync:vga_sync_unit|v_count_reg[6]                  ; vga_sync:vga_sync_unit|v_count_reg[6]                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.530      ;
+; 0.378 ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|state_reg.dps  ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|n_reg[1]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.530      ;
+; 0.378 ; kb_code:kb_code_unit|state_reg                         ; kb_code:kb_code_unit|p2_down_reg                       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.530      ;
+; 0.379 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[3]    ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[3]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.531      ;
+; 0.379 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[2]    ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[2]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.531      ;
+; 0.381 ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|state_reg.idle ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|state_reg.dps  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.533      ;
+; 0.382 ; m100_counter:counter2_unit|dig0_reg[0]                 ; m100_counter:counter2_unit|dig0_reg[1]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.534      ;
+; 0.383 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[5]    ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[5]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.535      ;
+; 0.383 ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|state_reg.dps  ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|n_reg[0]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.535      ;
+; 0.384 ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|state_reg.dps  ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|n_reg[2]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.536      ;
+; 0.385 ; vga_sync:vga_sync_unit|h_count_reg[7]                  ; vga_sync:vga_sync_unit|h_count_reg[7]                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.537      ;
+; 0.385 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[7]    ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[7]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.537      ;
+; 0.387 ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[9]    ; pong_graph_animate:pong_graph_an_unit|ball_y_reg[9]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.539      ;
+; 0.399 ; m100_counter:counter1_unit|dig1_reg[0]                 ; m100_counter:counter1_unit|dig1_reg[1]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.551      ;
+; 0.404 ; vga_sync:vga_sync_unit|h_count_reg[9]                  ; vga_sync:vga_sync_unit|h_count_reg[9]                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.556      ;
+; 0.410 ; m100_counter:counter1_unit|dig0_reg[0]                 ; m100_counter:counter1_unit|dig0_reg[1]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.562      ;
+; 0.416 ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|filter_reg[4]  ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|filter_reg[3]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.568      ;
+; 0.419 ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|b_reg[2]       ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|b_reg[1]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.571      ;
+; 0.428 ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|b_reg[8]       ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|b_reg[7]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.580      ;
++-------+--------------------------------------------------------+--------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'CLOCK_50'                                                                                                                                                                      ;
++--------+--------------+----------------+------------------+----------+------------+-----------------------------------------------------------------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                                                                                                                      ;
++--------+--------------+----------------+------------------+----------+------------+-----------------------------------------------------------------------------------------------------------------------------+
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a0~porta_address_reg0  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a0~porta_address_reg0  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a0~porta_address_reg1  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a0~porta_address_reg1  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a0~porta_address_reg10 ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a0~porta_address_reg10 ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a0~porta_address_reg2  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a0~porta_address_reg2  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a0~porta_address_reg3  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a0~porta_address_reg3  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a0~porta_address_reg4  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a0~porta_address_reg4  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a0~porta_address_reg5  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a0~porta_address_reg5  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a0~porta_address_reg6  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a0~porta_address_reg6  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a0~porta_address_reg7  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a0~porta_address_reg7  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a0~porta_address_reg8  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a0~porta_address_reg8  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a0~porta_address_reg9  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a0~porta_address_reg9  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg0  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg0  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg1  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg1  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg10 ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg10 ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg2  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg2  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg3  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg3  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg4  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg4  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg5  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg5  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg6  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg6  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg7  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg7  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg8  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg8  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg9  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a1~porta_address_reg9  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg0  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg0  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg1  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg1  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg10 ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg10 ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg2  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg2  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg3  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg3  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg4  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg4  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg5  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg5  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg6  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg6  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg7  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg7  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg8  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg8  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg9  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a4~porta_address_reg9  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg0  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg0  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg1  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg1  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg10 ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg10 ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg2  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg2  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg3  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg3  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg4  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg4  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg5  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg5  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg6  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg6  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg7  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg7  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg8  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg8  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg9  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pong_text:text_unit|font_rom:font_unit|altsyncram:Mux7_rtl_0|altsyncram_8lv:auto_generated|ram_block1a5~porta_address_reg9  ;
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; CLOCK_50 ; Rise       ; CLOCK_50                                                                                                                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; kb_code:kb_code_unit|p1_down_reg                                                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; kb_code:kb_code_unit|p1_down_reg                                                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; kb_code:kb_code_unit|p1_up_reg                                                                                              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; kb_code:kb_code_unit|p1_up_reg                                                                                              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; kb_code:kb_code_unit|p2_down_reg                                                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; kb_code:kb_code_unit|p2_down_reg                                                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; kb_code:kb_code_unit|p2_up_reg                                                                                              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; kb_code:kb_code_unit|p2_up_reg                                                                                              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|b_reg[10]                                                                           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|b_reg[10]                                                                           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|b_reg[1]                                                                            ;
++--------+--------------+----------------+------------------+----------+------------+-----------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; PS2_CLK   ; CLOCK_50   ; -1.002 ; -1.002 ; Rise       ; CLOCK_50        ;
+; PS2_DAT   ; CLOCK_50   ; -1.010 ; -1.010 ; Rise       ; CLOCK_50        ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Hold Times                                                            ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; PS2_CLK   ; CLOCK_50   ; 1.103 ; 1.103 ; Rise       ; CLOCK_50        ;
+; PS2_DAT   ; CLOCK_50   ; 1.111 ; 1.111 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; VGA_B[*]  ; CLOCK_50   ; 3.520 ; 3.520 ; Rise       ; CLOCK_50        ;
+;  VGA_B[0] ; CLOCK_50   ; 3.512 ; 3.512 ; Rise       ; CLOCK_50        ;
+;  VGA_B[1] ; CLOCK_50   ; 3.501 ; 3.501 ; Rise       ; CLOCK_50        ;
+;  VGA_B[2] ; CLOCK_50   ; 3.520 ; 3.520 ; Rise       ; CLOCK_50        ;
+; VGA_G[*]  ; CLOCK_50   ; 3.512 ; 3.512 ; Rise       ; CLOCK_50        ;
+;  VGA_G[0] ; CLOCK_50   ; 3.509 ; 3.509 ; Rise       ; CLOCK_50        ;
+;  VGA_G[1] ; CLOCK_50   ; 3.509 ; 3.509 ; Rise       ; CLOCK_50        ;
+;  VGA_G[2] ; CLOCK_50   ; 3.512 ; 3.512 ; Rise       ; CLOCK_50        ;
+; VGA_HS    ; CLOCK_50   ; 3.521 ; 3.521 ; Rise       ; CLOCK_50        ;
+; VGA_R[*]  ; CLOCK_50   ; 3.512 ; 3.512 ; Rise       ; CLOCK_50        ;
+;  VGA_R[0] ; CLOCK_50   ; 3.489 ; 3.489 ; Rise       ; CLOCK_50        ;
+;  VGA_R[1] ; CLOCK_50   ; 3.493 ; 3.493 ; Rise       ; CLOCK_50        ;
+;  VGA_R[2] ; CLOCK_50   ; 3.512 ; 3.512 ; Rise       ; CLOCK_50        ;
+; VGA_VS    ; CLOCK_50   ; 3.491 ; 3.491 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; VGA_B[*]  ; CLOCK_50   ; 3.501 ; 3.501 ; Rise       ; CLOCK_50        ;
+;  VGA_B[0] ; CLOCK_50   ; 3.512 ; 3.512 ; Rise       ; CLOCK_50        ;
+;  VGA_B[1] ; CLOCK_50   ; 3.501 ; 3.501 ; Rise       ; CLOCK_50        ;
+;  VGA_B[2] ; CLOCK_50   ; 3.520 ; 3.520 ; Rise       ; CLOCK_50        ;
+; VGA_G[*]  ; CLOCK_50   ; 3.509 ; 3.509 ; Rise       ; CLOCK_50        ;
+;  VGA_G[0] ; CLOCK_50   ; 3.509 ; 3.509 ; Rise       ; CLOCK_50        ;
+;  VGA_G[1] ; CLOCK_50   ; 3.509 ; 3.509 ; Rise       ; CLOCK_50        ;
+;  VGA_G[2] ; CLOCK_50   ; 3.512 ; 3.512 ; Rise       ; CLOCK_50        ;
+; VGA_HS    ; CLOCK_50   ; 3.521 ; 3.521 ; Rise       ; CLOCK_50        ;
+; VGA_R[*]  ; CLOCK_50   ; 3.489 ; 3.489 ; Rise       ; CLOCK_50        ;
+;  VGA_R[0] ; CLOCK_50   ; 3.489 ; 3.489 ; Rise       ; CLOCK_50        ;
+;  VGA_R[1] ; CLOCK_50   ; 3.493 ; 3.493 ; Rise       ; CLOCK_50        ;
+;  VGA_R[2] ; CLOCK_50   ; 3.512 ; 3.512 ; Rise       ; CLOCK_50        ;
+; VGA_VS    ; CLOCK_50   ; 3.491 ; 3.491 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                             ;
++------------------+-----------+-------+----------+---------+---------------------+
+; Clock            ; Setup     ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+-----------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -9.087    ; 0.215 ; N/A      ; N/A     ; -1.814              ;
+;  CLOCK_50        ; -9.087    ; 0.215 ; N/A      ; N/A     ; -1.814              ;
+; Design-wide TNS  ; -1057.786 ; 0.0   ; 0.0      ; 0.0     ; -325.011            ;
+;  CLOCK_50        ; -1057.786 ; 0.000 ; N/A      ; N/A     ; -325.011            ;
++------------------+-----------+-------+----------+---------+---------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; PS2_CLK   ; CLOCK_50   ; -1.002 ; -1.002 ; Rise       ; CLOCK_50        ;
+; PS2_DAT   ; CLOCK_50   ; -1.010 ; -1.010 ; Rise       ; CLOCK_50        ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Hold Times                                                            ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; PS2_CLK   ; CLOCK_50   ; 1.593 ; 1.593 ; Rise       ; CLOCK_50        ;
+; PS2_DAT   ; CLOCK_50   ; 1.602 ; 1.602 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; VGA_B[*]  ; CLOCK_50   ; 6.196 ; 6.196 ; Rise       ; CLOCK_50        ;
+;  VGA_B[0] ; CLOCK_50   ; 6.187 ; 6.187 ; Rise       ; CLOCK_50        ;
+;  VGA_B[1] ; CLOCK_50   ; 6.177 ; 6.177 ; Rise       ; CLOCK_50        ;
+;  VGA_B[2] ; CLOCK_50   ; 6.196 ; 6.196 ; Rise       ; CLOCK_50        ;
+; VGA_G[*]  ; CLOCK_50   ; 6.187 ; 6.187 ; Rise       ; CLOCK_50        ;
+;  VGA_G[0] ; CLOCK_50   ; 6.182 ; 6.182 ; Rise       ; CLOCK_50        ;
+;  VGA_G[1] ; CLOCK_50   ; 6.184 ; 6.184 ; Rise       ; CLOCK_50        ;
+;  VGA_G[2] ; CLOCK_50   ; 6.187 ; 6.187 ; Rise       ; CLOCK_50        ;
+; VGA_HS    ; CLOCK_50   ; 6.197 ; 6.197 ; Rise       ; CLOCK_50        ;
+; VGA_R[*]  ; CLOCK_50   ; 6.187 ; 6.187 ; Rise       ; CLOCK_50        ;
+;  VGA_R[0] ; CLOCK_50   ; 6.162 ; 6.162 ; Rise       ; CLOCK_50        ;
+;  VGA_R[1] ; CLOCK_50   ; 6.168 ; 6.168 ; Rise       ; CLOCK_50        ;
+;  VGA_R[2] ; CLOCK_50   ; 6.187 ; 6.187 ; Rise       ; CLOCK_50        ;
+; VGA_VS    ; CLOCK_50   ; 6.167 ; 6.167 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; VGA_B[*]  ; CLOCK_50   ; 3.501 ; 3.501 ; Rise       ; CLOCK_50        ;
+;  VGA_B[0] ; CLOCK_50   ; 3.512 ; 3.512 ; Rise       ; CLOCK_50        ;
+;  VGA_B[1] ; CLOCK_50   ; 3.501 ; 3.501 ; Rise       ; CLOCK_50        ;
+;  VGA_B[2] ; CLOCK_50   ; 3.520 ; 3.520 ; Rise       ; CLOCK_50        ;
+; VGA_G[*]  ; CLOCK_50   ; 3.509 ; 3.509 ; Rise       ; CLOCK_50        ;
+;  VGA_G[0] ; CLOCK_50   ; 3.509 ; 3.509 ; Rise       ; CLOCK_50        ;
+;  VGA_G[1] ; CLOCK_50   ; 3.509 ; 3.509 ; Rise       ; CLOCK_50        ;
+;  VGA_G[2] ; CLOCK_50   ; 3.512 ; 3.512 ; Rise       ; CLOCK_50        ;
+; VGA_HS    ; CLOCK_50   ; 3.521 ; 3.521 ; Rise       ; CLOCK_50        ;
+; VGA_R[*]  ; CLOCK_50   ; 3.489 ; 3.489 ; Rise       ; CLOCK_50        ;
+;  VGA_R[0] ; CLOCK_50   ; 3.489 ; 3.489 ; Rise       ; CLOCK_50        ;
+;  VGA_R[1] ; CLOCK_50   ; 3.493 ; 3.493 ; Rise       ; CLOCK_50        ;
+;  VGA_R[2] ; CLOCK_50   ; 3.512 ; 3.512 ; Rise       ; CLOCK_50        ;
+; VGA_VS    ; CLOCK_50   ; 3.491 ; 3.491 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLOCK_50   ; CLOCK_50 ; 51786    ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLOCK_50   ; CLOCK_50 ; 51786    ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 3     ; 3    ;
+; Unconstrained Input Port Paths  ; 136   ; 136  ;
+; Unconstrained Output Ports      ; 11    ; 11   ;
+; Unconstrained Output Port Paths ; 11    ; 11   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Mon Jan 27 15:04:39 2020
+Info: Command: quartus_sta pong -c pong
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'pong.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name CLOCK_50 CLOCK_50
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -9.087
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -9.087     -1057.786 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.445
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.445         0.000 CLOCK_50 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.814
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.814      -325.011 CLOCK_50 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -3.171
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.171      -299.072 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 CLOCK_50 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.423
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.423      -260.604 CLOCK_50 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4553 megabytes
+    Info: Processing ended: Mon Jan 27 15:04:41 2020
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+

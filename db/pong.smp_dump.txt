@@ -1,0 +1,13 @@
+
+State Machine - |pong_top_an|state_reg
+Name state_reg.over state_reg.newball state_reg.play state_reg.newgame 
+state_reg.newgame 0 0 0 0 
+state_reg.play 0 0 1 1 
+state_reg.newball 0 1 0 1 
+state_reg.over 1 0 0 1 
+
+State Machine - |pong_top_an|kb_code:kb_code_unit|ps2_rx:ps2_rx_unit|state_reg
+Name state_reg.load state_reg.dps state_reg.idle 
+state_reg.idle 0 0 0 
+state_reg.dps 0 1 1 
+state_reg.load 1 0 1 
